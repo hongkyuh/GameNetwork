@@ -1,13 +1,15 @@
 # 🎮 GameNetwork
 
+## 홍규현 22220965
+
 ## 👥 4조 구성원
 
 | 이름 | 이메일 |
 | :--- | :--- |
-| **서필창** | `spc7696@dyu.ac.kr` |
-| **이지호** | `jhleeyalee@naver.com` |
-| **정채원** | `projcw9663@gmail.com` |
-| **홍규현** | `hongkyuh75@gmail.com` |
+| **서필창** | `spc7696@dyu.ac.kr` | https://github.com/dyu-spc/animal-fight.git |
+| **이지호** | `jhleeyalee@naver.com` | https://github.com/Ulsan-Rock/GameNetwork.git |
+| **정채원** | `projcw9663@gmail.com` | https://github.com/projcw/GameNetwork.git |
+| **홍규현** | `hongkyuh75@gmail.com` | https://github.com/hongkyuh/GameNetwork.git |
 
 
 # 📡 애니멀 파이터 핵심 패킷 정의서
