@@ -4,8 +4,8 @@
 
 ## 👥 4조 구성원
 
-| 이름 | 이메일 |
-| :--- | :--- |
+| 이름 | 이메일 | 깃허브링크 |
+| :--- | :--- | :--- |
 | **서필창** | `spc7696@dyu.ac.kr` | `https://github.com/dyu-spc/animal-fight.git` |
 | **이지호** | `jhleeyalee@naver.com` | `https://github.com/Ulsan-Rock/GameNetwork.git` |
 | **정채원** | `projcw9663@gmail.com` | `https://github.com/projcw/GameNetwork.git` |
