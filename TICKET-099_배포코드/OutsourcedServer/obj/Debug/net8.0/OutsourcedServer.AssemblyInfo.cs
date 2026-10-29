@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OutsourcedServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c8395a31837fedb59e1b2dffdc29336d4bf5ffc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ed5de69a6727b5317eb4452be2cb99ac218ca8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("OutsourcedServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OutsourcedServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

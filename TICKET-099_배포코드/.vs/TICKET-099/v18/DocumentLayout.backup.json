@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A6DDE2B-6A52-4912-BB87-7381C8062DFD}|OutsourcedServer\\OutsourcedServer.csproj|c:\\gamenetwork\\ticket-099_\uBC30\uD3EC\uCF54\uB4DC\\outsourcedserver\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A6DDE2B-6A52-4912-BB87-7381C8062DFD}|OutsourcedServer\\OutsourcedServer.csproj|solutionrelative:outsourcedserver\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A6DDE2B-6A52-4912-BB87-7381C8062DFD}|OutsourcedServer\\OutsourcedServer.csproj|c:\\gamenetwork\\ticket-099_\uBC30\uD3EC\uCF54\uB4DC\\outsourcedserver\\packethelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A6DDE2B-6A52-4912-BB87-7381C8062DFD}|OutsourcedServer\\OutsourcedServer.csproj|solutionrelative:outsourcedserver\\packethelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C86EAE5A-CCAC-4C03-8D3C-34603B2BDDB0}|LoadTester\\LoadTester.csproj|c:\\gamenetwork\\ticket-099_\uBC30\uD3EC\uCF54\uB4DC\\loadtester\\loadtester.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{C86EAE5A-CCAC-4C03-8D3C-34603B2BDDB0}|LoadTester\\LoadTester.csproj|solutionrelative:loadtester\\loadtester.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -31,7 +39,33 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoadTester",
+              "Title": "ClientSession.cs",
+              "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\ClientSession.cs",
+              "RelativeDocumentMoniker": "OutsourcedServer\\ClientSession.cs",
+              "ToolTip": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\ClientSession.cs",
+              "RelativeToolTip": "OutsourcedServer\\ClientSession.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwFsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T18:08:42.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PacketHelper.cs",
+              "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\PacketHelper.cs",
+              "RelativeDocumentMoniker": "OutsourcedServer\\PacketHelper.cs",
+              "ToolTip": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\PacketHelper.cs",
+              "RelativeToolTip": "OutsourcedServer\\PacketHelper.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAqwC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T17:54:20.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadTester.csproj",
               "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\LoadTester\\LoadTester.csproj",
               "RelativeDocumentMoniker": "LoadTester\\LoadTester.csproj",
               "ToolTip": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\LoadTester\\LoadTester.csproj",
@@ -43,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\Program.cs",
               "RelativeDocumentMoniker": "OutsourcedServer\\Program.cs",
@@ -51,12 +85,11 @@
               "RelativeToolTip": "OutsourcedServer\\Program.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T11:42:21.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T11:42:21.5Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\TestClient\\Program.cs",
               "RelativeDocumentMoniker": "TestClient\\Program.cs",
@@ -64,12 +97,11 @@
               "RelativeToolTip": "TestClient\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T11:42:16.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T11:42:16.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\LoadTester\\Program.cs",
               "RelativeDocumentMoniker": "LoadTester\\Program.cs",
@@ -77,8 +109,7 @@
               "RelativeToolTip": "LoadTester\\Program.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAAwEQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T11:37:21.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T11:37:21.76Z"
             }
           ]
         }
