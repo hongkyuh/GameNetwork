@@ -77,7 +77,7 @@ namespace BattleArena
                     var result = await _socket.ReceiveFromAsync(
                         new ArraySegment<byte>(buffer), SocketFlags.None, from);
 
-                    string msg = Encoding.UTF8.GetString(buffer);
+                    string msg = Encoding.UTF8.GetString(buffer, 0, result.ReceivedBytes);
 
                     HandlePacket(msg, result.RemoteEndPoint);
                 }

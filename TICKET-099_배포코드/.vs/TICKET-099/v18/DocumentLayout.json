@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "OutsourcedServer\\UdpServer.cs",
               "ToolTip": "C:\\GameNetwork\\TICKET-099_\uBC30\uD3EC\uCF54\uB4DC\\OutsourcedServer\\UdpServer.cs",
               "RelativeToolTip": "OutsourcedServer\\UdpServer.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAYwI8AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAQwFgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-29T20:54:14.479Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "OutsourcedServer\\ClientSession.cs",
               "ViewState": "AgIAAJkAAAAAAAAAAAAmwKQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T18:08:42.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T18:08:42.293Z"
             },
             {
               "$type": "Document",
@@ -88,8 +87,7 @@
               "RelativeToolTip": "LoadTester\\LoadTester.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-29T11:45:16.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T11:45:16.198Z"
             },
             {
               "$type": "Document",
