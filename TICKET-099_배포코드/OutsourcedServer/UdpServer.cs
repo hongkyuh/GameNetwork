@@ -107,31 +107,38 @@ namespace BattleArena
             if (parts[0] != UdpPacket.MOVE) return;
 
             if (!int.TryParse(parts[1], out int playerId)) return;
-            if (!int.TryParse(parts[2], out int seq))      return;
-            if (!int.TryParse(parts[3], out int x))        return;
-            if (!int.TryParse(parts[4], out int y))        return;
+            if (!int.TryParse(parts[2], out int seq)) return;
+            if (!int.TryParse(parts[3], out int x)) return;
+            if (!int.TryParse(parts[4], out int y)) return;
 
-            // TCP로 로그인한 세션을 찾습니다
             ClientSession? session = GameServer.Instance.FindSession(playerId);
             if (session == null) return;
 
-            // 첫 UDP 패킷이면 주소를 기억해둡니다.
-            // 앞으로 이 주소로 STATE를 보내줄 겁니다.
             if (session.UdpEndPoint == null)
             {
                 session.UdpEndPoint = from;
                 Console.WriteLine($"[UDP] {session.Nickname} 주소 등록 : {from}");
             }
+            else if (!session.UdpEndPoint.Equals(from))
+            {
+                Interlocked.Increment(ref _droppedCount);
 
-            // 오래된 패킷은 버립니다.
-            // UDP는 순서를 보장하지 않아서 5번보다 6번이 먼저 올 수 있습니다.
-            // 그때 5번을 적용하면 캐릭터가 뒤로 갑니다.
+                // 확인용 임시 로그
+                Console.WriteLine(
+                    $"[UDP 차단] ID:{playerId} 등록:{session.UdpEndPoint} " +
+                    $"발신:{from} 현재좌표:({session.X},{session.Y})");
+
+                return;
+            }
+
+            // 중복되거나 이전 번호인 패킷을 버립니다.
             if (seq <= session.LastSeq)
             {
                 Interlocked.Increment(ref _droppedCount);
                 return;
             }
 
+            // 정상 패킷의 시퀀스 번호와 좌표를 적용합니다.
             session.LastSeq = seq;
             session.X = x;
             session.Y = y;
