@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "H0/DeScP8Bc=",
+  "success": true,
+  "projectFilePath": "C:\\UnivProjects\\GameNetwork\\실습\\6주차_실습자료\\CheatClient\\CheatClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hongk\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

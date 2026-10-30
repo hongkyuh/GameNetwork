@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "F7y6ojUu4Yk=",
+  "success": true,
+  "projectFilePath": "C:\\UnivProjects\\GameNetwork\\실습\\6주차_실습자료\\BattleArenaServer\\BattleArenaServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hongk\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
