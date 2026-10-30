@@ -16,6 +16,8 @@ namespace BattleArena
     {
         public int    PlayerId { get; private set; }
         public string Nickname { get; private set; } = "Unknown";
+        private volatile bool _isLoggedIn = false;
+        public bool IsLoggedIn => _isLoggedIn;
 
         // ── 위치 정보 (UDP로 갱신됨) ──
         public int X { get; set; }
@@ -107,7 +109,11 @@ namespace BattleArena
 
         private async Task HandleLoginAsync(string json)
         {
-            LoginPacket? login = JsonConvert.DeserializeObject<LoginPacket>(json);
+            if (_isLoggedIn) return;
+
+            LoginPacket? login =
+                JsonConvert.DeserializeObject<LoginPacket>(json);
+
             if (login == null) return;
 
             Nickname = string.IsNullOrWhiteSpace(login.Nickname)
@@ -117,12 +123,16 @@ namespace BattleArena
             await SendAsync(new WelcomePacket
             {
                 PlayerId = PlayerId,
-                Message  = $"{Nickname}님, 배틀아레나에 오신 것을 환영합니다!"
+                Message = $"{Nickname}님, 배틀아레나에 오신 것을 환영합니다!"
             });
+
+            if (!_isConnected) return;
+
+            _isLoggedIn = true;
 
             GameServer.Instance.Broadcast(new NoticePacket
             {
-                Type    = PacketType.PLAYER_IN,
+                Type = PacketType.PLAYER_IN,
                 Message = $"{Nickname}님이 입장했습니다."
             }, exceptPlayerId: PlayerId);
         }
