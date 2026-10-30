@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace BattleArena
 {
@@ -28,6 +30,10 @@ namespace BattleArena
         private readonly Stopwatch _uptime = new();
 
         private UdpServer? _udpServer;
+
+        private readonly ConcurrentDictionary<int, string> _pendingJoinNotices = new();
+        private const int JOIN_NOTICE_INTERVAL_MS = 100;
+        private const int MAX_JOIN_NOTICE_BODY = 8192;
 
         public GameServer()
         {
@@ -57,6 +63,7 @@ namespace BattleArena
 
             // 2초마다 상태를 출력합니다 (측정 과제에서 씁니다)
             _ = StatsLoopAsync();
+            _ = JoinNoticeLoopAsync();
 
             while (true)
             {
@@ -131,6 +138,120 @@ namespace BattleArena
 
                 _ = pair.Value.SendAsync(packet);
             }
+        }
+
+        public void RegisterJoinNotice(int playerId, string nickname)
+        {
+            _pendingJoinNotices.TryAdd(playerId, nickname);
+        }
+
+        private async Task JoinNoticeLoopAsync()
+        {
+            while (true)
+            {
+                await Task.Delay(JOIN_NOTICE_INTERVAL_MS);
+
+                try
+                {
+                    var pending = _pendingJoinNotices.ToArray();
+
+                    if (pending.Length == 0) continue;
+
+                    var batch = new List<KeyValuePair<int, string>>();
+
+                    foreach (var entry in pending)
+                    {
+                        if (!_pendingJoinNotices.TryRemove(
+                                entry.Key, out string? nickname))
+                        {
+                            continue;
+                        }
+
+                        var player =
+                            new KeyValuePair<int, string>(entry.Key, nickname);
+
+                        batch.Add(player);
+
+                        if (GetJoinNoticeBodyBytes(batch) <= MAX_JOIN_NOTICE_BODY)
+                            continue;
+
+                        batch.RemoveAt(batch.Count - 1);
+
+                        await SendJoinNoticeBatchAsync(batch);
+
+                        batch.Clear();
+                        batch.Add(player);
+
+                        if (GetJoinNoticeBodyBytes(batch) > MAX_JOIN_NOTICE_BODY)
+                        {
+                            batch[0] = new KeyValuePair<int, string>(
+                                player.Key, $"Player{player.Key}");
+                        }
+                    }
+
+                    await SendJoinNoticeBatchAsync(batch);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[입장 알림 오류] {ex.Message}");
+                }
+            }
+        }
+
+        private static NoticePacket BuildJoinNotice(
+            List<KeyValuePair<int, string>> batch,
+            int exceptPlayerId = -1)
+        {
+            var names = new List<string>();
+
+            foreach (var player in batch)
+            {
+                if (player.Key == exceptPlayerId) continue;
+
+                names.Add(player.Value);
+            }
+
+            return new NoticePacket
+            {
+                Type = PacketType.PLAYER_IN,
+                Message = $"{string.Join(", ", names)}님이 입장했습니다."
+            };
+        }
+
+        private static int GetJoinNoticeBodyBytes(
+            List<KeyValuePair<int, string>> batch)
+        {
+            string json =
+                JsonConvert.SerializeObject(BuildJoinNotice(batch));
+
+            return Encoding.UTF8.GetByteCount(json);
+        }
+
+        private async Task SendJoinNoticeBatchAsync(
+            List<KeyValuePair<int, string>> batch)
+        {
+            if (batch.Count == 0) return;
+
+            var sends = new List<Task>();
+
+            foreach (var session in _sessions.Values)
+            {
+                if (!session.IsLoggedIn) continue;
+
+                if (batch.Count == 1 &&
+                    batch[0].Key == session.PlayerId)
+                {
+                    continue;
+                }
+
+                NoticePacket notice = BuildJoinNotice(batch, session.PlayerId);
+
+                sends.Add(session.SendAsync(notice));
+            }
+
+            await Task.WhenAll(sends);
+
+            Console.WriteLine($"[입장 알림] 묶음 {batch.Count}명 / 전송 대상 {sends.Count}명");
         }
     }
 }

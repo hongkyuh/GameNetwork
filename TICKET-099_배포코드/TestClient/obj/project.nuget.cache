@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "p5g4DtkA1Zk=",
+  "dgSpecHash": "OUP2+xqjgy8=",
   "success": true,
-  "projectFilePath": "C:\\UnivProjects\\GameNetwork\\TICKET-099_배포코드\\TestClient\\TestClient.csproj",
+  "projectFilePath": "C:\\GameNetwork\\TICKET-099_배포코드\\TestClient\\TestClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\hongk\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\kitot\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

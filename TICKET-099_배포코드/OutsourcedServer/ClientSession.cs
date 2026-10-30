@@ -130,11 +130,7 @@ namespace BattleArena
 
             _isLoggedIn = true;
 
-            GameServer.Instance.Broadcast(new NoticePacket
-            {
-                Type = PacketType.PLAYER_IN,
-                Message = $"{Nickname}님이 입장했습니다."
-            }, exceptPlayerId: PlayerId);
+            GameServer.Instance.RegisterJoinNotice(PlayerId, Nickname);
         }
 
         private async Task HandleChatAsync(string json)
